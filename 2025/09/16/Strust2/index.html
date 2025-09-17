@@ -20,28 +20,35 @@
     var CONFIG = {"hostname":"vickytaiziyi.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="VickyTaiziyi">
-<meta property="og:url" content="https://vickytaiziyi.github.io/index.html">
+  <meta name="description" content="Struts2简介Struts2是一个基于MVC设计模式的Web应用框架，它本质上相当于一个servlet，在MVC设计模式中，Struts2作为控制器(Controller)来建立模型与视图的数据交互。 MVCMVC是Model-View-Controller的缩写，它将Web应用分为三层，View层负责用户视图、页面展示等工作；Controller负责应用的逻辑实现，接收View层传入的用户请">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Struts2">
+<meta property="og:url" content="https://vickytaiziyi.github.io/2025/09/16/Strust2/index.html">
 <meta property="og:site_name" content="VickyTaiziyi">
+<meta property="og:description" content="Struts2简介Struts2是一个基于MVC设计模式的Web应用框架，它本质上相当于一个servlet，在MVC设计模式中，Struts2作为控制器(Controller)来建立模型与视图的数据交互。 MVCMVC是Model-View-Controller的缩写，它将Web应用分为三层，View层负责用户视图、页面展示等工作；Controller负责应用的逻辑实现，接收View层传入的用户请">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://vickytaiziyi.github.io/2025/09/16/images/1620868575088.jpg">
+<meta property="article:published_time" content="2025-09-16T08:00:00.000Z">
+<meta property="article:modified_time" content="2025-09-17T02:13:10.996Z">
 <meta property="article:author" content="VickyTaiziyi">
+<meta property="article:tag" content="Struts2">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vickytaiziyi.github.io/2025/09/16/images/1620868575088.jpg">
 
-<link rel="canonical" href="https://vickytaiziyi.github.io/">
+<link rel="canonical" href="https://vickytaiziyi.github.io/2025/09/16/Strust2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>VickyTaiziyi</title>
+  <title>Struts2 | VickyTaiziyi</title>
   
 
 
@@ -149,9 +156,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -167,10 +175,9 @@
       <meta itemprop="name" content="VickyTaiziyi">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/09/16/Strust2/" class="post-title-link" itemprop="url">Struts2</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Struts2
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -221,7 +228,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Struts2"><a href="#Struts2" class="headerlink" title="Struts2"></a>Struts2</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Struts2是一个基于<strong>MVC</strong>设计模式的Web应用框架，它本质上相当于一个servlet，在MVC设计模式中，Struts2作为控制器(Controller)来建立模型与视图的数据交互。</p>
+        <h1 id="Struts2"><a href="#Struts2" class="headerlink" title="Struts2"></a>Struts2</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Struts2是一个基于<strong>MVC</strong>设计模式的Web应用框架，它本质上相当于一个servlet，在MVC设计模式中，Struts2作为控制器(Controller)来建立模型与视图的数据交互。</p>
 <h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p><strong>MVC</strong>是Model-View-Controller的缩写，它将Web应用分为三层，<strong>View层</strong>负责用户视图、页面展示等工作；<strong>Controller</strong>负责应用的逻辑实现，接收View层传入的用户请求，并转发给对应的Model做处理；<strong>Model层</strong>则负责实现模型，完成数据的处理。在 MVC 或类似架构里，数据流都是按照**「View → Controller → Model → Controller → View」**这条链路跑的。</p>
 <h2 id="从web-xml判断是否使用Strust2框架"><a href="#从web-xml判断是否使用Strust2框架" class="headerlink" title="从web.xml判断是否使用Strust2框架"></a>从web.xml判断是否使用Strust2框架</h2><p><strong>web.xml</strong>是Java Web应用的部署描述文件，用来配置Servlet、Filter、Listener等组件，以及之间的映射关系，可以分析此xml知道Web项目使用了哪些核心组件或框架。Struts2 框架的核心是一个 <strong>Filter</strong>,可以搜索<code>StrutsPrepareAndExecuteFilter</code>，含有该<strong>Filter</strong>,说明该项目使用的是<strong>Struts2框架</strong>，因为Strust2请求都是经过这个<code>Filter</code>来处理的</p>
 <h2 id="OGNL"><a href="#OGNL" class="headerlink" title="OGNL"></a>OGNL</h2><p><strong>对象图导航语言</strong>用于Java的开源表达式语言，允许开发者运行时获取和设置对象属性，几乎涵盖Java中常见的操作</p>
@@ -266,104 +273,33 @@
 
 <p>如图得主要出现在<strong>拦截器（Interceptor）阶段</strong>(参数处理和文件上传拦截)、<strong>Action执行阶段</strong>(命名空间和重定向处理)、<strong>结果渲染（Result）阶段</strong>(标签和模板处理)</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/Struts2/" rel="tag"># Struts2</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vickytaiziyi.github.io/2025/09/16/hello-world/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="VickyTaiziyi">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="VickyTaiziyi">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/09/16/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-09-16 10:51:01 / 修改时间：13:59:05" itemprop="dateCreated datePublished" datetime="2025-09-16T10:51:01+08:00">2025-09-16</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>367</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/09/16/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -416,6 +352,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Struts2"><span class="nav-number">1.</span> <span class="nav-text">Struts2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-number">1.2.</span> <span class="nav-text">MVC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8Eweb-xml%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%BD%BF%E7%94%A8Strust2%E6%A1%86%E6%9E%B6"><span class="nav-number">1.3.</span> <span class="nav-text">从web.xml判断是否使用Strust2框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OGNL"><span class="nav-number">1.4.</span> <span class="nav-text">OGNL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ValueStack"><span class="nav-number">1.4.1.</span> <span class="nav-text">ValueStack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.4.2.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">1.5.</span> <span class="nav-text">生命周期</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
