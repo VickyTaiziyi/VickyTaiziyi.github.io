@@ -186,7 +186,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-09-17 10:26:54" itemprop="dateModified" datetime="2025-09-17T10:26:54+08:00">2025-09-17</time>
+                <time title="修改时间：2025-09-17 10:27:41" itemprop="dateModified" datetime="2025-09-17T10:27:41+08:00">2025-09-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -203,7 +203,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>1.8k</span>
+              <span>1.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -227,7 +227,7 @@
 <h2 id="OGNL"><a href="#OGNL" class="headerlink" title="OGNL"></a>OGNL</h2><p><strong>对象图导航语言</strong>用于Java的开源表达式语言，允许开发者运行时获取和设置对象属性，几乎涵盖Java中常见的操作</p>
 <p>OGNL表达式默认在值栈(ValueStack)里取值，请求到来时，Strust2会将Action对象、参数等数据放到<strong>值栈</strong></p>
 <p>假设有一个Java对象</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line">User user=<span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">user.setName=(<span class="string">&quot;Vicky&quot;</span>);</span><br><span class="line">user.setAge(<span class="number">23</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">User user=<span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">user.setName=(<span class="string">&quot;Vicky&quot;</span>);</span><br><span class="line">user.setAge(<span class="number">23</span>);</span><br></pre></td></tr></table></figure>
 
 <p>OGNL：</p>
 <p><code>user.name;</code>                 				   	—&gt;访问对象属性</p>
@@ -238,22 +238,22 @@
 <ul>
 <li><code>#</code>：访问OGNL上下文里的Map对象(context区)，允许攻击者绕过root栈，直接访问服务器敏感数据或环境变</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line"># session.userId 		<span class="comment">//访问用户session信息</span></span><br><span class="line"># application.config   <span class="comment">//访问全局应用配置</span></span><br><span class="line">    <span class="comment">//配合其他操作符执行任意代码</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># session.userId 		<span class="comment">//访问用户session信息</span></span><br><span class="line"># application.config   <span class="comment">//访问全局应用配置</span></span><br><span class="line">    <span class="comment">//配合其他操作符执行任意代码</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><code>@</code>：访问已有Java类的静态方法或字段，调用Java核心类方法(如 Runtime、ProcessBuilder)，直接执行系统命令</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line"><span class="meta">@java</span>.lang.Math<span class="meta">@max(3,5)</span></span><br><span class="line"><span class="meta">@java</span>.lang.Runtime<span class="meta">@getRuntime()</span>.exec(<span class="string">&#x27;calc&#x27;</span>)</span><br><span class="line">    <span class="comment">//结合new,链式调用实现任意命令执行</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@java</span>.lang.Math<span class="meta">@max(3,5)</span></span><br><span class="line"><span class="meta">@java</span>.lang.Runtime<span class="meta">@getRuntime()</span>.exec(<span class="string">&#x27;calc&#x27;</span>)</span><br><span class="line">    <span class="comment">//结合new,链式调用实现任意命令执行</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><code>new</code>：动态创建Java对象，生成任意对象，配合方法调用代码，创建类的实例对象</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">java</span>.util.Date().getTime()</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">java</span>.lang.ProcessBuilder(<span class="string">&#x27;calc&#x27;</span>).start() <span class="comment">// 执行系统命令</span></span><br><span class="line">    <span class="comment">//配合@调用静态方法或危险方法</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">java</span>.util.Date().getTime()</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">java</span>.lang.ProcessBuilder(<span class="string">&#x27;calc&#x27;</span>).start() <span class="comment">// 执行系统命令</span></span><br><span class="line">    <span class="comment">//配合@调用静态方法或危险方法</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><code>./[]</code>：访问对象属性&#x2F;集合</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line"><span class="meta">@java</span>.lang.Runtime<span class="meta">@getRuntime()</span>.exec(<span class="string">&#x27;calc&#x27;</span>)  <span class="comment">// 点号调用静态方法</span></span><br><span class="line">#session[<span class="string">&#x27;username&#x27;</span>]                          <span class="comment">// Map 访问</span></span><br><span class="line">    <span class="comment">//可链式调用方法或访问内部对象</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@java</span>.lang.Runtime<span class="meta">@getRuntime()</span>.exec(<span class="string">&#x27;calc&#x27;</span>)  <span class="comment">// 点号调用静态方法</span></span><br><span class="line">#session[<span class="string">&#x27;username&#x27;</span>]                          <span class="comment">// Map 访问</span></span><br><span class="line">    <span class="comment">//可链式调用方法或访问内部对象</span></span><br></pre></td></tr></table></figure>
 
 
 
