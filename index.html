@@ -176,7 +176,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-09-18 15:45:50" itemprop="dateModified" datetime="2025-09-18T15:45:50+08:00">2025-09-18</time>
+                <time title="修改时间：2025-09-18 16:35:32" itemprop="dateModified" datetime="2025-09-18T16:35:32+08:00">2025-09-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -200,7 +200,7 @@
 
       
           <h1 id="S2-001"><a href="#S2-001" class="headerlink" title="S2-001"></a>S2-001</h1><h2 id="漏洞原理"><a href="#漏洞原理" class="headerlink" title="漏洞原理"></a>漏洞原理</h2><p><strong>用户提交的数据未被严格校验就被当作OGNL表达式执行，导致RCE(远程代码执行)</strong></p>
-<p>**官方描述:**WebWork 和 Struts 2 的 <strong>altSyntax</strong> 特性，该特性允许在文本字符串中嵌入 OGNL 表达式，并对其进行递归解析。当用户通过 HTML 表单提交包含 OGNL 表达式的字符串（例如通过  标签），且表单验证失败时，服务器会重新显示表单并解析用户提交的内容。如果提交的内容包含恶意 OGNL 表达式，服务器会在解析过程中执行这些表达式。</p>
+<p>官方描述:WebWork 和 Struts 2 的 <strong>altSyntax</strong> 特性，该特性允许在文本字符串中嵌入 OGNL 表达式，并对其进行递归解析。当用户通过 HTML 表单提交包含 OGNL 表达式的字符串（例如通过  标签），且表单验证失败时，服务器会重新显示表单并解析用户提交的内容。如果提交的内容包含恶意 OGNL 表达式，服务器会在解析过程中执行这些表达式。</p>
 <h2 id="漏洞影响版本"><a href="#漏洞影响版本" class="headerlink" title="漏洞影响版本"></a>漏洞影响版本</h2><p><strong>WebWork</strong>：2.1（启用 altSyntax 特性）、2.2.0 至 2.2.5</p>
 <p><strong>Struts 2</strong>：2.0.0 至 2.0.8</p>
 <h2 id="技术细节"><a href="#技术细节" class="headerlink" title="技术细节"></a>技术细节</h2><ul>
