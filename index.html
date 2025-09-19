@@ -207,7 +207,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-09-19 16:53:27" itemprop="dateModified" datetime="2025-09-19T16:53:27+08:00">2025-09-19</time>
+                <time title="修改时间：2025-09-19 17:06:58" itemprop="dateModified" datetime="2025-09-19T17:06:58+08:00">2025-09-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -256,7 +256,7 @@
 <li>对于简单的表达式 如<code>%{1+1}</code>直接进行数学运算</li>
 <li>如果表达式 如<code>%{username}</code>,OGNL表达式从Root栈顶的Action对象查找<code>getUsername()</code>方法</li>
 <li>如果表达式使用<code>#</code> 如<code>%{#session[&#39;key&#39;]}</code>,OGNL访问Context区的session对象</li>
-<li>如果表达式使用<code>@或new</code> 如<code>%{@java.lang.Runtime@getRuntime().exec(&#39;whoami&#39;)}</code>,OGNL 调用 Java 的静态方法或创建对象，执行相应的代码。</li>
+<li>如果表达式使用<code>@或new</code> 如：<code>%{@java.lang.Runtime@getRuntime().exec(&#39;whoami&#39;)}</code>,OGNL 调用 Java 的静态方法或创建对象，执行相应的代码。</li>
 </ul>
 </li>
 </ul>
@@ -667,176 +667,11 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vickytaiziyi.github.io/2025/09/17/Strust2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="VickyTaiziyi">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="VickyTaiziyi">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/09/17/Strust2/" class="post-title-link" itemprop="url">Struts2</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-09-17 10:30:00" itemprop="dateCreated datePublished" datetime="2025-09-17T10:30:00+08:00">2025-09-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-09-19 11:07:32" itemprop="dateModified" datetime="2025-09-19T11:07:32+08:00">2025-09-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Struts2/" itemprop="url" rel="index"><span itemprop="name">Struts2</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Strut2"><a href="#Strut2" class="headerlink" title="Strut2"></a>Strut2</h1><p><strong>初次了解一个漏洞的原理，除了查看网络上相关的漏洞分析文章以外，最重要就是一定要自己调试。</strong></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Struts2是一个基于<strong>MVC</strong>设计模式的Web应用框架，它本质上相当于一个servlet，在MVC设计模式中，Struts2作为控制器(Controller)来建立模型与视图的数据交互。</p>
-<h2 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h2><p>Struts 2 是由 WebWork 框架演变而来的，它并非Struts 1 的直接升级版本，而是吸收了WebWork 的许多优秀特性和架构设计，成为一个独立的框架。底层大量代码直接继承自 <strong>WebWork</strong>，所以核心类库依然放在 <code>com.opensymphony.xwork2</code> 命名空间下。</p>
-<p><code>xwork2</code> 就是 Struts2 的“内核”，<strong>几乎所有核心功能</strong>都在这里：</p>
-<ul>
-<li><strong>Action 接口 &#x2F; 默认实现</strong><ul>
-<li><code>com.opensymphony.xwork2.Action</code>：所有 Action 的顶层接口</li>
-<li><code>com.opensymphony.xwork2.ActionSupport</code>：最常用的 Action 基类</li>
-</ul>
-</li>
-<li><strong>拦截器机制</strong><ul>
-<li><code>com.opensymphony.xwork2.interceptor.*</code>：拦截器链的实现，比如参数注入、校验、国际化</li>
-</ul>
-</li>
-<li><strong>值栈 (ValueStack)</strong><ul>
-<li><code>com.opensymphony.xwork2.ognl.OgnlValueStack</code>：核心数据结构，存储 Action 和上下文，供 OGNL 表达式取值</li>
-</ul>
-</li>
-<li><strong>配置和容器</strong><ul>
-<li><code>com.opensymphony.xwork2.config.*</code>：负责加载 <code>struts.xml</code> 等配置</li>
-<li><code>com.opensymphony.xwork2.ObjectFactory</code>：创建 Action、结果对象、拦截器</li>
-</ul>
-</li>
-<li><strong>校验 (Validation)</strong><ul>
-<li><code>com.opensymphony.xwork2.validator.*</code>：字段校验和规则定义</li>
-</ul>
-</li>
-</ul>
-<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p><strong>MVC</strong>是Model-View-Controller的缩写，它将Web应用分为三层，<strong>View层</strong>负责用户视图、页面展示等工作；<strong>Controller</strong>负责应用的逻辑实现，接收View层传入的用户请求，并转发给对应的Model做处理；<strong>Model层</strong>则负责实现模型，完成数据的处理。在 MVC 或类似架构里，数据流都是按照「View → Controller → Model → Controller → View」这条链路跑的。</p>
-<h2 id="从web-xml判断是否使用Strust2框架"><a href="#从web-xml判断是否使用Strust2框架" class="headerlink" title="从web.xml判断是否使用Strust2框架"></a>从web.xml判断是否使用Strust2框架</h2><p><strong>web.xml</strong>是Java Web应用的部署描述文件，用来配置Servlet、Filter、Listener等组件，以及之间的映射关系，可以分析此xml知道Web项目使用了哪些核心组件或框架。Struts2 框架的核心是一个 <strong>Filter</strong>,可以搜索<code>StrutsPrepareAndExecuteFilter</code>，含有该<strong>Filter</strong>,说明该项目使用的是<strong>Struts2框架</strong>，因为Strust2请求都是经过这个<code>Filter</code>来处理的</p>
-<h2 id="执行过程"><a href="#执行过程" class="headerlink" title="执行过程"></a>执行过程</h2><p><img data-src="/images/20250919110548886.png" alt="img"></p>
-<p>官方提供的Struts2的架构如图</p>
-<img data-src="E:/Typora/typora-user-images/img/image-20250919110548886.png" alt="image-20250919110548886" style="zoom:67%;" />
-
-<p><strong>Servlet Filters</strong>：过滤器链，客户端的所有请求都要经过Filter链的处理。</p>
-<p><strong>Struts Core</strong>：Struts2的核心部分。</p>
-<p><strong>Interceptors</strong>：Struts2的拦截器。Struts2提供了很多默认的拦截器，可以完成日常开发的绝大部分工作；而我们自定义的拦截器用来实现实际的客户业务需要的功能。</p>
-<p><strong>User created</strong>：由开发人员创建，包括struts.xml、Action、Template。</p>
-<h2 id="OGNL"><a href="#OGNL" class="headerlink" title="OGNL"></a>OGNL</h2><p><strong>对象图导航语言</strong>用于Java的开源表达式语言，允许开发者运行时获取和设置对象属性，几乎涵盖Java中常见的操作</p>
-<p>OGNL表达式默认在值栈(ValueStack)里取值，请求到来时，Strust2会将Action对象、参数等数据放到<strong>值栈</strong></p>
-<p>假设有一个Java对象</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">User user=<span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">user.setName=(<span class="string">&quot;Vicky&quot;</span>);</span><br><span class="line">user.setAge(<span class="number">23</span>);</span><br></pre></td></tr></table></figure>
-
-<p>OGNL：</p>
-<p><code>user.name;</code>                 				   	—&gt;访问对象属性</p>
-<p><code>user.setName(&quot;Licky&quot;);</code>			   —&gt;调用方法，修改名称</p>
-<p><code>user.getName().toUpperCase();</code>—&gt;链式调用</p>
-<p>OGNL 不仅能“取值”，还能“执行方法”，这就是它<strong>危险的地方。</strong></p>
-<p><strong>OGNL注入利用的高危操作符:</strong></p>
-<ul>
-<li><code>#</code>：访问OGNL上下文里的Map对象(context区)，允许攻击者绕过root栈，直接访问服务器敏感数据或环境变</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># session.userId 		<span class="comment">//访问用户session信息</span></span><br><span class="line"># application.config   <span class="comment">//访问全局应用配置</span></span><br><span class="line"><span class="comment">//配合其他操作符执行任意代码</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>@</code>：访问已有Java类的静态方法或字段，调用Java核心类方法(如 Runtime、ProcessBuilder)，直接执行系统命令</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@java</span>.lang.Math<span class="meta">@max(3,5)</span></span><br><span class="line"><span class="meta">@java</span>.lang.Runtime<span class="meta">@getRuntime()</span>.exec(<span class="string">&#x27;calc&#x27;</span>)</span><br><span class="line"><span class="comment">//结合new,链式调用实现任意命令执行</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>new</code>：动态创建Java对象，生成任意对象，配合方法调用代码，创建类的实例对象</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">java</span>.util.Date().getTime()</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">java</span>.lang.ProcessBuilder(<span class="string">&#x27;calc&#x27;</span>).start() <span class="comment">// 执行系统命令</span></span><br><span class="line"><span class="comment">//配合@调用静态方法或危险方法</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>./[]</code>：访问对象属性&#x2F;集合</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@java</span>.lang.Runtime<span class="meta">@getRuntime()</span>.exec(<span class="string">&#x27;calc&#x27;</span>)  <span class="comment">// 点号调用静态方法</span></span><br><span class="line">#session[<span class="string">&#x27;username&#x27;</span>]                          <span class="comment">// Map 访问</span></span><br><span class="line"><span class="comment">//可链式调用方法或访问内部对象</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>复杂组合</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%&#123;(#context=#attr[<span class="string">&#x27;struts.valueStack&#x27;</span>].context).(#context.setMemberAccess(<span class="meta">@ognl</span>.OgnlContext<span class="meta">@DEFAULT_MEMBER_ACCESS</span>)).(<span class="meta">@java</span>.lang.Runtime<span class="meta">@getRuntime()</span>.exec(<span class="string">&#x27;whoami&#x27;</span>))&#125;</span><br></pre></td></tr></table></figure>
-
-<p>表达式使用<strong>链式调用</strong>，每个子表达式通过<code>.</code>连接，OGNL 会从左到右依次执行。</p>
-<ul>
-<li><code>(#context=#attr[&#39;struts.valueStack&#39;].context)</code>：获取值栈的上下文对象,得到<code>ValueStack</code>实例，其中包含当前请求相关的数据模型，这个对象的<strong>引用</strong>赋值给变量<code>#context</code>，后续方便使用<ul>
-<li>常见的 context 变量还包括 <code>#session</code>（session map）、<code>#parameters</code>（请求参数 map）、<code>#application</code>（servlet context）等。<code>#attr</code> 则专门用于 request attribute。</li>
-</ul>
-</li>
-<li><code>(#context.setMemberAccess(@ognl.OgnlContext@DEFAULT_MEMBER_ACCESS))</code>：修改OGNL成员访问权限控制，绕过沙箱限制，允许任意调用Java方法。<ul>
-<li><code>setMemberAccess</code>：设置<strong>成员访问控制器</strong>，<code>OgnlContext</code>暴露的方法</li>
-<li><code>(@ognl.OgnlContext@DEFAULT_MEMBER_ACCESS))</code>：获取<code>ognl.OgnlContext</code>的静态字段<code>DEFAULT_MEMBER_ACCESS</code>。Strust2默认运行时给<code>OgnlContext</code>做一个安全的处理，禁止随便访问私有方法，避免命令执行。这里则替换OGNL提供的默认”无限制”访问对象，<strong>允许静态方法与构造器的调用</strong>（这正是攻击链常利用的一点）</li>
-</ul>
-</li>
-<li><code>(@java.lang.Runtime@getRuntime().exec(&#39;whoami&#39;))</code>：调用 Java 的 Runtime 类执行系统命令 <code>whoami</code>，返回当前服务器用户名</li>
-</ul>
-<h3 id="ValueStack"><a href="#ValueStack" class="headerlink" title="ValueStack"></a>ValueStack</h3><p>由两部分组成：</p>
-<ul>
-<li><strong>root（CompoundRoot）</strong>：一个 <strong>List 集合</strong>，里面放 Action 对象、模型对象等，主对象栈，<strong>OGNL核心搜索路径</strong>。</li>
-<li><strong>context（OgnlContext）</strong>：一个 <strong>Map 集合</strong>，存放额外的上下文数据（request、session、application 等）。</li>
-</ul>
-<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p><img data-src="/images/1620868575088.jpg" alt="img"></p>
-<p><img data-src="E:/Typora/typora-user-images/img/1620868575088-17580760001061.jpg" alt="1620868575088">图来自素十八</p>
-<p>如图得主要出现在<strong>拦截器（Interceptor）阶段</strong>(参数处理和文件上传拦截)、<strong>Action执行阶段</strong>(命名空间和重定向处理)、<strong>结果渲染（Result）阶段</strong>(标签和模板处理)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1008,6 +843,31 @@
 
 
   
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
 
 
 
@@ -1025,6 +885,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'dark',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   
