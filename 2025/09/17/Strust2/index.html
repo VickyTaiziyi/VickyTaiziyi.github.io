@@ -272,7 +272,7 @@
 <h2 id="从web-xml判断是否使用Strust2框架"><a href="#从web-xml判断是否使用Strust2框架" class="headerlink" title="从web.xml判断是否使用Strust2框架"></a>从web.xml判断是否使用Strust2框架</h2><p><strong>web.xml</strong>是Java Web应用的部署描述文件，用来配置Servlet、Filter、Listener等组件，以及之间的映射关系，可以分析此xml知道Web项目使用了哪些核心组件或框架。Struts2 框架的核心是一个 <strong>Filter</strong>,可以搜索<code>StrutsPrepareAndExecuteFilter</code>，含有该<strong>Filter</strong>,说明该项目使用的是<strong>Struts2框架</strong>，因为Strust2请求都是经过这个<code>Filter</code>来处理的</p>
 <h2 id="执行过程"><a href="#执行过程" class="headerlink" title="执行过程"></a>执行过程</h2><p><img data-src="/images/20250919110548886.png" alt="img"></p>
 <p>官方提供的Struts2的架构如图</p>
-<img data-src="E:/Typora/typora-user-images/img/image-20250919110548886.png" alt="image-20250919110548886" style="zoom:67%;">
+<img data-src="E:/Typora/typora-user-images/img/image-20250919110548886.png" alt="image-20250919110548886" style="zoom:67%;" />
 
 <p><strong>Servlet Filters</strong>：过滤器链，客户端的所有请求都要经过Filter链的处理。</p>
 <p><strong>Struts Core</strong>：Struts2的核心部分。</p>
