@@ -20,7 +20,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vickytaiziyi.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":20,"offset":15,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+    var CONFIG = {"hostname":"vickytaiziyi.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":20,"offset":15,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
   <meta name="description" content="Strut2初次了解一个漏洞的原理，除了查看网络上相关的漏洞分析文章以外，最重要就是一定要自己调试。 简介Struts2是一个基于MVC设计模式的Web应用框架，它本质上相当于一个servlet，在MVC设计模式中，Struts2作为控制器(Controller)来建立模型与视图的数据交互。 历史Struts 2 是由 WebWork 框架演变而来的，它并非Struts 1 的直接升级版本，而是吸">
@@ -270,9 +270,9 @@
 </ul>
 <h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p><strong>MVC</strong>是Model-View-Controller的缩写，它将Web应用分为三层，<strong>View层</strong>负责用户视图、页面展示等工作；<strong>Controller</strong>负责应用的逻辑实现，接收View层传入的用户请求，并转发给对应的Model做处理；<strong>Model层</strong>则负责实现模型，完成数据的处理。在 MVC 或类似架构里，数据流都是按照「View → Controller → Model → Controller → View」这条链路跑的。</p>
 <h2 id="从web-xml判断是否使用Strust2框架"><a href="#从web-xml判断是否使用Strust2框架" class="headerlink" title="从web.xml判断是否使用Strust2框架"></a>从web.xml判断是否使用Strust2框架</h2><p><strong>web.xml</strong>是Java Web应用的部署描述文件，用来配置Servlet、Filter、Listener等组件，以及之间的映射关系，可以分析此xml知道Web项目使用了哪些核心组件或框架。Struts2 框架的核心是一个 <strong>Filter</strong>,可以搜索<code>StrutsPrepareAndExecuteFilter</code>，含有该<strong>Filter</strong>,说明该项目使用的是<strong>Struts2框架</strong>，因为Strust2请求都是经过这个<code>Filter</code>来处理的</p>
-<h2 id="执行过程"><a href="#执行过程" class="headerlink" title="执行过程"></a>执行过程</h2><p><img src="/images/20250919110548886.png" alt="img"></p>
+<h2 id="执行过程"><a href="#执行过程" class="headerlink" title="执行过程"></a>执行过程</h2><p><img data-src="/images/20250919110548886.png" alt="img"></p>
 <p>官方提供的Struts2的架构如图</p>
-<img src="E:/Typora/typora-user-images/img/image-20250919110548886.png" alt="image-20250919110548886" style="zoom:67%;" />
+<img data-src="E:/Typora/typora-user-images/img/image-20250919110548886.png" alt="image-20250919110548886" style="zoom:67%;">
 
 <p><strong>Servlet Filters</strong>：过滤器链，客户端的所有请求都要经过Filter链的处理。</p>
 <p><strong>Struts Core</strong>：Struts2的核心部分。</p>
@@ -332,8 +332,8 @@
 <li><strong>root（CompoundRoot）</strong>：一个 <strong>List 集合</strong>，里面放 Action 对象、模型对象等，主对象栈，<strong>OGNL核心搜索路径</strong>。</li>
 <li><strong>context（OgnlContext）</strong>：一个 <strong>Map 集合</strong>，存放额外的上下文数据（request、session、application 等）。</li>
 </ul>
-<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p><img src="/images/1620868575088.jpg" alt="img"></p>
-<p><img src="E:/Typora/typora-user-images/img/1620868575088-17580760001061.jpg" alt="1620868575088">图来自素十八</p>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p><img data-src="/images/1620868575088.jpg" alt="img"></p>
+<p><img data-src="E:/Typora/typora-user-images/img/1620868575088-17580760001061.jpg" alt="1620868575088">图来自素十八</p>
 <p>如图得主要出现在<strong>拦截器（Interceptor）阶段</strong>(参数处理和文件上传拦截)、<strong>Action执行阶段</strong>(命名空间和重定向处理)、<strong>结果渲染（Result）阶段</strong>(标签和模板处理)</p>
 
     </div>
@@ -497,6 +497,8 @@
   <script src="/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
