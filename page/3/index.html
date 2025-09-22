@@ -207,7 +207,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-09-20 11:27:06" itemprop="dateModified" datetime="2025-09-20T11:27:06+08:00">2025-09-20</time>
+                <time title="修改时间：2025-09-23 06:32:26" itemprop="dateModified" datetime="2025-09-23T06:32:26+08:00">2025-09-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,7 +262,7 @@
 <h2 id="从web-xml判断是否使用Strust2框架"><a href="#从web-xml判断是否使用Strust2框架" class="headerlink" title="从web.xml判断是否使用Strust2框架"></a>从web.xml判断是否使用Strust2框架</h2><p><strong>web.xml</strong>是Java Web应用的部署描述文件，用来配置Servlet、Filter、Listener等组件，以及之间的映射关系，可以分析此xml知道Web项目使用了哪些核心组件或框架。Struts2 框架的核心是一个 <strong>Filter</strong>,可以搜索<code>StrutsPrepareAndExecuteFilter</code>，含有该<strong>Filter</strong>,说明该项目使用的是<strong>Struts2框架</strong>，因为Strust2请求都是经过这个<code>Filter</code>来处理的</p>
 <h2 id="执行过程"><a href="#执行过程" class="headerlink" title="执行过程"></a>执行过程</h2><p><img data-src="/images/20250919110548886.png" alt="img"></p>
 <p>官方提供的Struts2的架构如图</p>
-<img data-src="E:/Typora/typora-user-images/img/image-20250919110548886.png" alt="image-20250919110548886" style="zoom:67%;" />
+<img data-src="../images/image-20250919110548886.png" alt="image-20250919110548886" style="zoom:67%;" />
 
 <p><strong>Servlet Filters</strong>：过滤器链，客户端的所有请求都要经过Filter链的处理。</p>
 <p><strong>Struts Core</strong>：Struts2的核心部分。</p>
@@ -332,7 +332,7 @@
 <li><strong>context（OgnlContext）</strong>：一个 <strong>Map 集合</strong>，存放额外的上下文数据（request、session、application、parameters 等）。</li>
 </ul>
 <h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p><img data-src="/images/1620868575088.jpg" alt="img"></p>
-<p><img data-src="E:/Typora/typora-user-images/img/1620868575088-17580760001061.jpg" alt="1620868575088">图来自素十八</p>
+<p><img data-src="/../images/1620868575088-17580760001061.jpg" alt="1620868575088">图来自素十八</p>
 <p>如图得主要出现在<strong>拦截器（Interceptor）阶段</strong>(参数处理和文件上传拦截)、<strong>Action执行阶段</strong>(命名空间和重定向处理)、<strong>结果渲染（Result）阶段</strong>(标签和模板处理)</p>
 
       
